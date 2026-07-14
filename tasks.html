@@ -122,3 +122,28 @@
   <p>Task 7 - Daily Login</p>
   <button onclick="alert('Task Completed! Reward Added.')">✅ Complete</button>
 </div>
+<h2>Daily Task</h2>
+
+<p><b>Today's Task:</b></p>
+
+<p>Copy the link below:</p>
+
+<input type="text" value="https://your-link.com" id="taskLink" readonly style="width:100%;padding:10px;">
+
+<br><br>
+
+<button onclick="copyLink()">📋 Copy Link</button>
+
+<br><br>
+
+<button onclick="alert('Task Completed!')">✅ Complete Task</button>
+
+<script>
+function copyLink() {
+  var copyText = document.getElementById("taskLink");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  alert("Link Copied Successfully!");
+}
+</script>
