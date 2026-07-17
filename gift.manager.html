@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift Manager</title>
+
+<link rel="stylesheet" href="gift_manager.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎁 Gift Manager</h1>
+
+<div class="gift-form">
+
+<input type="text" id="giftName" placeholder="Gift Name">
+
+<input type="number" id="giftPrice" placeholder="Coin Price">
+
+<input type="text" id="giftIcon" placeholder="Gift Emoji (🎁, 🌹, 💎)">
+
+<button onclick="addGift()">Add Gift</button>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Gift</th>
+<th>Price</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="giftList">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="gift_manager.js"></script>
+
+</body>
+</html>
