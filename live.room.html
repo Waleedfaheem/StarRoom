@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StarRoom Live Room</title>
+
+<link rel="stylesheet" href="live_room.css">
+
+</head>
+
+
+<body>
+
+
+<div class="live-container">
+
+
+<div class="top">
+
+<h1>🎤 StarRoom Live</h1>
+
+<p>
+🟡 Points:
+<span id="points">0</span>
+</p>
+
+</div>
+
+
+
+<div class="host-seat">
+
+<div class="avatar">👑</div>
+
+<h3 id="hostName">
+Host
+</h3>
+
+</div>
+
+
+
+
+<h2>🎙 Seats</h2>
+
+
+<div class="seats">
+
+
+<div class="seat" id="seat1">
+➕
+<p>Seat 1</p>
+</div>
+
+
+<div class="seat" id="seat2">
+➕
+<p>Seat 2</p>
+</div>
+
+
+<div class="seat" id="seat3">
+➕
+<p>Seat 3</p>
+</div>
+
+
+<div class="seat" id="seat4">
+➕
+<p>Seat 4</p>
+</div>
+
+
+<div class="seat" id="seat5">
+➕
+<p>Seat 5</p>
+</div>
+
+
+<div class="seat" id="seat6">
+➕
+<p>Seat 6</p>
+</div>
+
+
+<div class="seat" id="seat7">
+➕
+<p>Seat 7</p>
+</div>
+
+
+<div class="seat" id="seat8">
+➕
+<p>Seat 8</p>
+</div>
+
+
+</div>
+
+
+
+
+<div class="controls">
+
+<button onclick="joinSeat()">
+🎤 Join Seat
+</button>
+
+
+<button onclick="toggleMic()">
+🎙 Mic
+</button>
+
+
+<button onclick="leaveRoom()">
+🚪 Leave
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<script src="firebase.js"></script>
+<script src="live_room.js"></script>
+
+
+</body>
+
+</html>
