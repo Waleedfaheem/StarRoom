@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StarRoom Wallet</title>
+
+<link rel="stylesheet" href="wallet.css">
+
+</head>
+
+<body>
+
+<div class="wallet-box">
+
+<h1>💎 My Wallet</h1>
+
+<div class="balance">
+<h2 id="coins">800</h2>
+<p>Total Coins</p>
+</div>
+
+
+<div class="buttons">
+
+<button onclick="recharge()">➕ Recharge</button>
+
+<button onclick="history()">📜 History</button>
+
+<button onclick="giftSpend()">🎁 Gift Spend</button>
+
+</div>
+
+
+<div class="transactions">
+
+<h2>Transactions</h2>
+
+<ul id="transactionList">
+
+<li>Welcome Bonus +800 Coins</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<script src="wallet.js"></script>
+
+</body>
+</html>
+<script src="firebase.js"></script>
+<script src="database.js"></script>
+<script src="wallet.js"></script>
+<h2 id="yellowPoints">
+0 🟡
+</h2>
+
+
+<button onclick="withdrawRequest()">
+💰 Withdraw 3000 PKR
+</button>
+
+
+<button onclick="addLiveReward()">
+🎤 Get Live Reward
+</button>
