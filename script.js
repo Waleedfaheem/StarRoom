@@ -1,50 +1,142 @@
-function guestRegister(){
+// ===============================
+// STARROOM LOGIN SYSTEM
+// script.js - Part 1
+// ===============================
 
-let fullname = document.getElementById("fullname").value;
-let username = document.getElementById("username").value;
-let email = document.getElementById("email").value;
-let password = document.getElementById("password").value;
-let age = document.getElementById("age").value;
+// Login Form
+const loginForm = document.getElementById("loginForm");
 
-if(fullname=="" || username=="" || email=="" || password=="" || age==""){
-alert("Please fill all fields");
-return;
+loginForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+
+    const password = document.getElementById("password").value.trim();
+
+    if (email === "" || password === "") {
+
+        alert("Please enter Email and Password.");
+
+        return;
+
+    }
+
+    // Loading Button
+    const btn = document.querySelector(".login-btn");
+
+    btn.innerHTML = "Please Wait...";
+
+    btn.disabled = true;
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+
+    .then((userCredential) => {
+
+        alert("Login Successful!");
+
+        window.location.href = "dashboard.html";
+
+    })
+
+    .catch((error) => {
+
+        alert(error.message);
+
+        btn.innerHTML = "LOGIN";
+
+        btn.disabled = false;
+
+    });
+
+  // ===============================
+// STARROOM LOGIN SYSTEM
+// script.js - Part 2
+// ===============================
+
+// Register Button
+const registerBtn = document.querySelector(".register-btn");
+
+if (registerBtn) {
+
+    registerBtn.addEventListener("click", function () {
+
+        window.location.href = "register.html";
+
+    });
+
 }
 
-localStorage.setItem("fullname",fullname);
-localStorage.setItem("username",username);
-localStorage.setItem("email",email);
-localStorage.setItem("age",age);
+// Google Login Button
+const googleBtn = document.querySelector(".google-btn");
 
-alert("Guest Account Created Successfully");
+if (googleBtn) {
 
-window.location.href="home.html";
+    googleBtn.addEventListener("click", function () {
+
+        alert("Google Login Coming Soon...");
+
+    });
 
 }
-// Splash Screen
 
-window.onload = function () {
+// Facebook Login Button
+const facebookBtn = document.querySelector(".facebook-btn");
 
-const splash = document.createElement("div");
+if (facebookBtn) {
 
-splash.id = "splash";
+    facebookBtn.addEventListener("click", function () {
 
-splash.innerHTML = `
-<div class="logo">⭐ Pongino</div>
-<div class="loader"></div>
-`;
+       
+});// ===============================
+// STARROOM LOGIN SYSTEM
+// script.js - Part 3 (FINAL)
+// ===============================
 
-document.body.appendChild(splash);
+// Show / Hide Password
+const passwordField = document.getElementById("password");
 
-// 1 Second Loading
+const togglePassword = document.getElementById("togglePassword");
 
-setTimeout(() => {
-splash.style.opacity = "0";
+if (togglePassword && passwordField) {
 
-setTimeout(() => {
-splash.remove();
-},500);
+    togglePassword.addEventListener("click", function () {
 
-},1000);
+        if (passwordField.type === "password") {
 
-};
+            passwordField.type = "text";
+            togglePassword.innerHTML = "🙈";
+
+        } else {
+
+            passwordField.type = "password";
+            togglePassword.innerHTML = "👁️";
+
+        }
+
+    });
+
+}
+
+// Enter Key Login
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "Enter"){
+
+        if(loginForm){
+
+            loginForm.requestSubmit();
+
+        }
+
+    }
+
+});
+
+// Welcome Message
+console.log("⭐ Welcome To StarRoom");
+
+// App Version
+const APP_VERSION = "1.0.0";
+
+console.log("Version:", APP_VERSION);
