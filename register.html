@@ -1,53 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>StarRoom Register</title>
 
-<link rel="stylesheet" href="register.css">
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="register-box">
+<div class="background"></div>
 
-<h1>⭐ StarRoom</h1>
+<div class="login-box">
 
-<h2>Guest Sign Up</h2>
+<div class="logo">
 
+<img src="logo.png" alt="StarRoom">
 
-<input type="text" id="fullName" placeholder="Full Name">
+<h1>STARROOM</h1>
 
-<input type="text" id="username" placeholder="Username">
-
-<input type="email" id="email" placeholder="Email">
-
-<input type="password" id="password" placeholder="Password">
-
-<input type="number" id="age" placeholder="Age">
-
-
-<button onclick="createAccount()">
-Create Account
-</button>
-
-
-<p>
-Already have account?
-<a href="login.html">Login</a>
-</p>
-
+<p>Create Your Account</p>
 
 </div>
 
+<form id="registerForm">
+
+<div class="input-box">
+
+<input
+type="text"
+id="name"
+placeholder="Full Name"
+required>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="email"
+id="email"
+placeholder="Email"
+required>
+
+</div>
+  <div class="input-box">
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm Password"
+required>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="tel"
+id="phone"
+placeholder="Phone Number"
+required>
+
+</div>
+
+<button
+type="submit"
+class="login-btn">
+
+CREATE ACCOUNT
+
+</button>
+
+<div class="divider">
+
+<span>Already have an account?</span>
+
+</div>
+
+<button
+type="button"
+class="register-btn"
+onclick="location.href='index.html'">
+
+LOGIN NOW
+
+</button>
+
+</form>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="password"
+id="password"
+placeholder="Password"
+required>
+
+</div>
+<div class="version">
+
+<p>Version 1.0.0</p>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 
 <script src="firebase.js"></script>
-<script src="database.js"></script>
+
 <script src="register.js"></script>
 
 </body>
+
 </html>
