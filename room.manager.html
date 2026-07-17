@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room Manager</title>
+
+<link rel="stylesheet" href="room_manager.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎤 Room Manager</h1>
+
+<div class="create-room">
+
+<input type="text" id="roomName" placeholder="Enter Room Name">
+
+<select id="roomCategory">
+<option>Music</option>
+<option>Gaming</option>
+<option>Family</option>
+<option>PK Battle</option>
+<option>Fun Talk</option>
+</select>
+
+<select id="roomSeats">
+<option>4 Seats</option>
+<option>8 Seats</option>
+<option>12 Seats</option>
+<option>16 Seats</option>
+</select>
+
+<button onclick="createRoom()">Create Room</button>
+
+</div>
+
+<h2>All Rooms</h2>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Room Name</th>
+<th>Category</th>
+<th>Seats</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+<tbody id="roomList">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="room_manager.js"></script>
+
+</body>
+</html>
