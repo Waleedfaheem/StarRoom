@@ -11,175 +11,128 @@
 
 <link rel="stylesheet" href="dashboard.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
 <div class="dashboard">
 
-<header class="top-header">
+<div class="top-bar">
 
-<div class="profile">
+<h2 id="welcomeUser">Welcome</h2>
 
-<img src="logo.png" class="avatar">
-
-<div>
-
-<h2>StarRoom</h2>
-
-<p>ID : 100001</p>
+<button id="logoutBtn">Logout</button>
 
 </div>
 
-</div>
+<div class="profile-card">
 
-<div class="vip">
+<h3 id="userName">Loading...</h3>
 
-VIP 0
+<p>Coins</p>
 
-</div>
+<h1 id="userCoins">0</h1>
 
-</header>
+<p>Balance</p>
 
-<div class="wallet-card">
-
-<h3>Total Balance</h3>
-
-<h1>0 Coins</h1>
-
-<p>PKR 0.00</p>
+<h2 id="userBalance">0</h2>
 
 </div>
 
-<div class="quick-buttons">
+<div class="reward-box">
 
-<button class="deposit">
+<button id="dailyRewardBtn">
 
-Deposit
+Daily Reward (+900)
 
 </button>
 
-<button class="withdraw">
+<button id="liveRewardBtn">
 
-Withdraw
-
-</button>
-
-<button class="gift">
-
-Gift
+Live Seat (+1200)
 
 </button>
-  <div class="card">
 
-<span>🪙</span>
+</div>
+<div class="menu-grid">
 
-<h4>Coins</h4>
+<div class="menu-item">
 
-<p id="coins">10000</p>
+<span>💰</span>
+
+<p>Wallet</p>
 
 </div>
 
-<div class="card">
+<div class="menu-item">
 
 <span>🎁</span>
 
-<h4>Daily Reward</h4>
-
-<p>Claim</p>
+<p>Gifts</p>
 
 </div>
 
-<div class="card">
+<div class="menu-item">
 
 <span>👥</span>
 
-<h4>My Team</h4>
-
-<p>0 Members</p>
+<p>Friends</p>
 
 </div>
 
-<div class="card">
+<div class="menu-item">
 
 <span>🏆</span>
 
-<h4>Leaderboard</h4>
-
-<p>Top Players</p>
+<p>Ranking</p>
 
 </div>
 
-<div class="card">
+<div class="menu-item">
 
-<span>🎡</span>
+<span>🎤</span>
 
-<h4>Lucky Spin</h4>
-
-<p>Play Now</p>
+<p>Voice Room</p>
 
 </div>
 
-<div class="card">
+<div class="menu-item">
 
-<span>📋</span>
+<span>👤</span>
 
-<h4>Tasks</h4>
-
-<p>Complete</p>
-
-</div>
-
-<div class="card">
-
-<span>💬</span>
-
-<h4>Live Chat</h
-               <div class="bottom-nav">
-
-<a href="dashboard.html" class="active">
-🏠
-<p>Home</p>
-</a>
-
-<a href="gift.html">
-🎁
-<p>Gift</p>
-</a>
-
-<a href="team.html">
-👥
-<p>Team</p>
-</a>
-
-<a href="wallet.html">
-💰
-<p>Wallet</p>
-</a>
-
-<a href="profile.html">
-👤
 <p>Profile</p>
-</a>
+
+</div>
+
+<div class="menu-item">
+
+<span>⚙️</span>
+
+<p>Settings</p>
+
+</div>
+
+<div class="menu-item">
+
+<span>📨</span>
+
+<p>Messages</p>
 
 </div>
 
 </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+<script src="firebase.js"></script>
 
 <script src="dashboard.js"></script>
 
 </body>
 
 </html>
-
-<button class="shop">
-
-Coin Shop
-
-</button>
-
-</div>
-
-<div class="menu-grid">
