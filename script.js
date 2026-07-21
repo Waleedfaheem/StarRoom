@@ -1,169 +1,318 @@
-// ======================================
-// StarRoom
-// script.js
-// Part 1
-// ======================================
+// ============================
+// StarRoom Login System
+// ============================
 
-const loginForm = document.getElementById("loginForm");
 
-if (loginForm) {
+// Get Elements
 
-loginForm.addEventListener("submit", function(e) {
+const emailInput = document.getElementById("email");
 
-e.preventDefault();
+const passwordInput = document.getElementById("password");
 
-const email = document.getElementById("email").value.trim();
+const loginBtn = document.getElementById("loginBtn");
 
-const password = document.getElementById("password").value;
+const googleLoginBtn = document.getElementById("googleLoginBtn");
 
-auth.signInWithEmailAndPassword(email, password)
+const facebookLoginBtn = document.getElementById("facebookLoginBtn");
 
-.then((userCredential) => {
 
-window.location.href = "dashboard.html";
+// ============================
+// Email Password Login
+// ============================
+
+loginBtn.addEventListener("click",()=>{
+
+
+const email = emailInput.value;
+
+const password = passwordInput.value;
+
+
+if(email === "" || password === ""){
+
+alert("Please enter email and password");
+
+return;
+
+}
+
+
+auth.signInWithEmailAndPassword(email,password)
+
+.then((userCredential)=>{
+
+
+console.log("Login Success");
+
+window.location.href="dashboard.html";
+
 
 })
 
-.catch((error) => {
+.catch((error)=>{
+
 
 alert(error.message);
 
-});
 
 });
 
+
+});
+
+
+// ============================
+// Google Login
+// ============================
+
+googleLoginBtn.addEventListener("click",()=>{
+
+
+googleSignIn();
+
+
+});
+
+
+// ============================
+// Facebook Login
+// ============================
+
+facebookLoginBtn.addEventListener("click",()=>{
+
+
+facebookSignIn();
+
+
+});
+// ============================
+// Create User Profile
+// ============================
+
+function createUserProfile(user){
+
+
+const userData = {
+
+uid:user.uid,
+
+name:user.displayName || "StarRoom User",
+
+email:user.email,
+
+photo:user.photoURL || "assets/profile.png",
+
+coins:0,
+
+points:0,
+
+vip:"Free",
+
+createdAt:new Date().toISOString()
+
+};
+
+
+// Save User Data
+
+database.ref("users/" + user.uid)
+
+.set(userData)
+
+.then(()=>{
+
+
+console.log("Profile Created Successfully");
+
+
+});
+
+
 }
 
-// Google Login Button
 
-const googleBtn = document.getElementById("googleLogin");
+// ============================
+// Check Login User
+// ============================
 
-if (googleBtn) {
+auth.onAuthStateChanged((user)=>{
 
-googleBtn.addEventListener("click", googleSignIn);
+
+if(user){
+
+
+console.log("Active User:",user.email);
+
+
+// Create Profile If New User
+
+database.ref("users/" + user.uid)
+
+.once("value")
+
+.then((snapshot)=>{
+
+
+if(!snapshot.exists()){
+
+
+createUserProfile(user);
+
 
 }
 
-// Facebook Login Button
 
-const facebookBtn = document.getElementById("facebookLogin");
+});
 
-if (facebookBtn) {
-
-facebookBtn.addEventListener("click", facebookSignIn);
 
 }
-// ======================================
-// StarRoom
-// script.js
-// Part 2
-// ======================================
 
-// Register Form
 
-const registerForm = document.getElementById("registerForm");
+});
 
-if (registerForm) {
 
-registerForm.addEventListener("submit", function(e) {
+// ============================
+// Loading System
+// ============================
+
+function showLoading(){
+
+
+const loading = document.getElementById("loadingScreen");
+
+
+if(loading){
+
+loading.style.display="flex";
+
+}
+
+
+}
+
+
+function hideLoading(){
+
+
+const loading = document.getElementById("loadingScreen");
+
+
+if(loading){
+
+loading.style.display="none";
+
+}
+
+
+}// ============================
+// Forgot Password
+// ============================
+
+const forgotPassword = document.getElementById("forgotPassword");
+
+
+if(forgotPassword){
+
+
+forgotPassword.addEventListener("click",(e)=>{
+
 
 e.preventDefault();
 
-const name = document.getElementById("name").value.trim();
 
-const email = document.getElementById("email").value.trim();
+const email = emailInput.value;
 
-const password = document.getElementById("password").value;
 
-auth.createUserWithEmailAndPassword(email, password)
+if(email === ""){
 
-.then((userCredential) => {
 
-const user = userCredential.user;
+alert("Enter your email first");
 
-saveUserData(user.uid, {
 
-name: name,
+return;
 
-email: email,
 
-coins: 800,
+}
 
-balance: 0,
 
-vip: 0
+auth.sendPasswordResetEmail(email)
 
-});
+.then(()=>{
 
-user.sendEmailVerification();
 
-alert("Account Created Successfully. Please verify your Email.");
+alert("Password reset email sent");
 
-window.location.href = "index.html";
 
 })
 
-.catch((error) => {
+.catch((error)=>{
+
 
 alert(error.message);
 
-});
-
-});
-// ======================================
-// StarRoom
-// script.js
-// Part 3
-// ======================================
-
-// Check User Session
-
-auth.onAuthStateChanged((user) => {
-
-if (user) {
-
-if (window.location.pathname.includes("index.html") ||
-window.location.pathname.endsWith("/")) {
-
-window.location.href = "dashboard.html";
-
-}
-
-}
 
 });
 
-// Logout Button
-
-const logoutBtn = document.getElementById("logoutBtn");
-
-if (logoutBtn) {
-
-logoutBtn.addEventListener("click", function () {
-
-logout();
 
 });
 
-}
-
-// Welcome Message
-
-auth.onAuthStateChanged((user) => {
-
-if (user) {
-
-const welcome = document.getElementById("welcomeUser");
-
-if (welcome) {
-
-welcome.innerHTML = "Welcome, " + user.email;
 
 }
 
-}
+
+// ============================
+// Register Link
+// ============================
+
+const registerLink = document.getElementById("registerLink");
+
+
+if(registerLink){
+
+
+registerLink.addEventListener("click",()=>{
+
+
+window.location.href="register.html";
+
 
 });
 
-console.log("✅ script.js Loaded Successfully");
-    }
+
+}
+
+
+// ============================
+// Logout Function
+// ============================
+
+function logout(){
+
+
+auth.signOut()
+
+.then(()=>{
+
+
+window.location.href="index.html";
+
+
+})
+
+.catch((error)=>{
+
+
+alert(error.message);
+
+
+});
+
+
+}
+
+
+// ============================
+// Firebase Connected
+// ============================
+
+console.log("✅ StarRoom Login System Ready");
