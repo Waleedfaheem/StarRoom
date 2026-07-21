@@ -1,139 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StarRoom</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<div class="background">
-
-<div class="overlay"></div>
-
-</div>
-
-<div class="login-page">
-
-<div class="login-box">
+<!-- StarRoom Logo -->
 
 <div class="logo-box">
 
-<img src="logo.png" class="logo">
+<img src="assets/logo.png" id="appLogo" alt="StarRoom Logo">
+
+</div>
 
 <h1>StarRoom</h1>
 
 <p>Play • Win • Repeat</p>
 
-</div>
-
-<form id="loginForm">
-
-<div class="input-box">
+<!-- Email -->
 
 <input
 type="email"
 id="email"
 placeholder="Email Address"
-required>
+autocomplete="email">
 
-</div>
-
-<div class="input-box">
+<!-- Password -->
 
 <input
 type="password"
 id="password"
 placeholder="Password"
-required>
+autocomplete="current-password">
 
-</div>
+<!-- Login -->
 
-<button
-class="login-btn"
-type="submit">
-
+<button id="loginBtn">
 LOGIN
-
 </button>
+
 <div class="divider">
-
 <span>OR</span>
-
 </div>
 
-<button
-type="button"
-id="googleLogin"
-class="google-btn">
+<!-- Google Login -->
 
-<img src="google.png">
+<button id="googleLoginBtn" class="social-btn">
+
+<img src="assets/google.png" alt="Google">
 
 <span>Continue with Google</span>
 
 </button>
 
-<button
-type="button"
-id="facebookLogin"
-class="facebook-btn">
+<!-- Facebook Login -->
 
-<img src="facebook.png">
+<button id="facebookLoginBtn" class="social-btn">
+
+<img src="assets/facebook.png" alt="Facebook">
 
 <span>Continue with Facebook</span>
 
 </button>
+<!-- Forgot Password -->
 
-<div class="forgot-password">
+<div class="forgot-box">
 
-<a href="#">
-
+<a href="forgot.html" id="forgotPassword">
 Forgot Password?
-
 </a>
 
 </div>
 
-<div class="register-link">
+<!-- Register -->
 
-<span>
+<div class="register-box">
+
+<p>
 
 Don't have an account?
 
-</span>
+<a href="register.html" id="registerLink">
 
-<a href="register.html">
-
-Register Now
+Create Account
 
 </a>
 
-</div>
-
-<div class="version">
-
-Version 1.0
-
-</div>
-</form>
+</p>
 
 </div>
 
+<!-- Loading -->
+
+<div id="loadingScreen" class="loading-screen">
+
+<div class="loader"></div>
+
+<p>Please wait...</p>
+
 </div>
+
+<!-- Error Message -->
+
+<div id="errorMessage" class="error-box"></div>
+
+<!-- Success Message -->
+
+<div id="successMessage" class="success-box"></div>
+</div>
+
+<!-- Firebase -->
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+<!-- JavaScript Files -->
 
 <script src="firebase.js"></script>
 
