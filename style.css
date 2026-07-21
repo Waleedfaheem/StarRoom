@@ -1,263 +1,143 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-background:#1b1233;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:20px;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#050505;
 }
 
-.container{
-width:100%;
-max-width:420px;
-background:#2b1f4d;
-border-radius:20px;
-padding:30px 20px;
-box-shadow:0 0 25px rgba(0,0,0,0.35);
-text-align:center;
+.login-box{
+    width:90%;
+    max-width:380px;
+    background:#111;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 20px gold;
 }
 
-.logo-box img{
-width:90px;
-height:90px;
-object-fit:contain;
-margin-bottom:15px;
+.logo{
+    width:100px;
+    height:100px;
+    border-radius:50%;
 }
 
 h1{
-color:#ffffff;
-font-size:30px;
-margin-bottom:8px;
+    color:#ffd700;
+    margin:15px 0;
 }
-
-p{
-color:#cfcfcf;
-margin-bottom:20px;
-font-size:15px;
-}
-
 input{
-width:100%;
-padding:14px;
-margin-bottom:15px;
-border:none;
-border-radius:12px;
-background:#ffffff;
-font-size:16px;
-outline:none;
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:#222;
+    color:white;
+    font-size:16px;
 }
+
+
 button{
-width:100%;
-padding:14px;
-border:none;
-border-radius:12px;
-font-size:17px;
-font-weight:bold;
-cursor:pointer;
-margin-bottom:15px;
-transition:0.3s;
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    background:#ffd700;
+    color:#000;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-#loginBtn{
-background:#ffcc00;
-color:#000;
-}
 
-#loginBtn:hover{
-background:#ffd633;
-}
+.social-login button{
 
-.divider{
-display:flex;
-align-items:center;
-justify-content:center;
-margin:15px 0;
-color:#aaa;
-}
-
-.divider span{
-padding:0 10px;
-}
-
-.social-btn{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-background:#ffffff;
-color:#333;
-}
-
-.social-btn img{
-width:25px;
-height:25px;
-object-fit:contain;
-}
-
-.forgot-box{
-margin:10px 0;
-}
-
-.forgot-box a{
-color:#ffcc00;
-text-decoration:none;
-font-size:14px;
-}
-
-.register-box{
-margin-top:20px;
-color:#ccc;
-}
-
-.register-box a{
-color:#ffcc00;
-text-decoration:none;
-font-weight:bold;
-}
-
-.error-box{
-color:#ff4444;
-margin-top:10px;
-font-size:14px;
-}
-
-.success-box{
-color:#00ff88;
-margin-top:10px;
-font-size:14px;
-}
-.loading-screen{
-
-display:none;
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:rgba(0,0,0,0.7);
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-color:white;
-
-z-index:999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:#222;
+    color:white;
+    border:1px solid #444;
 
 }
 
 
-.loader{
+.social-login img{
 
-width:45px;
-
-height:45px;
-
-border:5px solid #ffffff;
-
-border-top:5px solid #ffcc00;
-
-border-radius:50%;
-
-animation:spin 1s linear infinite;
-
-margin-bottom:15px;
+    width:25px;
+    height:25px;
 
 }
 
 
-@keyframes spin{
+.links{
 
-0%{
-
-transform:rotate(0deg);
+    margin-top:20px;
 
 }
 
-100%{
 
-transform:rotate(360deg);
+.links a{
+
+    color:#ffd700;
+    text-decoration:none;
+    font-size:14px;
 
 }
+.google-btn:hover{
+
+    background:#333;
+
+}
+
+
+.facebook-btn:hover{
+
+    background:#333;
+
+}
+
+
+button:active{
+
+    transform:scale(0.98);
 
 }
 
 
 @media(max-width:480px){
 
-.container{
+    .login-box{
 
-padding:25px 15px;
+        width:95%;
+        padding:25px;
 
-border-radius:15px;
-
-}
-
-
-h1{
-
-font-size:26px;
-
-}
+    }
 
 
-input,button{
+    h1{
 
-font-size:15px;
+        font-size:28px;
 
-}
+    }
 
-.logo-box img{
 
-width:75px;
+    input,button{
 
-height:75px;
+        font-size:15px;
+
+    }
 
 }
 
-}
-
-
-/* Smooth Animation */
-
-.container{
-
-animation:fadeIn 0.6s ease;
-
-}
-
-
-@keyframes fadeIn{
-
-from{
-
-opacity:0;
-
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-   }
