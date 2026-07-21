@@ -1,142 +1,97 @@
-// ==========================
-// StarRoom Dashboard
-// ==========================
+// ===== StarRoom Dashboard Part 1 =====
 
-let coins = 10000;
-let balance = 0;
+let balance = 800;
 
-const coinText = document.getElementById("coins");
+window.onload = function () {
+    updateBalance();
+};
 
-function updateCoins(){
+function updateBalance() {
+    const balanceText = document.querySelector(".balance-card h1");
+    if (balanceText) {
+        balanceText.innerHTML = "Rs. " + balance;
+    }
+}
 
-coinText.innerHTML = coins.toLocaleString();
+function deposit() {
+    alert("💵 Deposit Page Coming Soon");
+}
+
+function withdraw() {
+    alert("🏧 Withdraw Page Coming Soon");
+}
+
+function dailyReward() {
+    balance += 900;
+    updateBalance();
+    alert("🎁 Congratulations! You received 900 Points.");
+}
+
+function profile() {
+    alert("👤 Profile Opening...");
+}
+
+function voiceRoom() {
+    alert("🎤 Voice Room Opening...");
+}
+// ===== StarRoom Dashboard Part 2 =====
+
+// Deposit System
+function deposit() {
+
+    balance += 300;
+
+    updateBalance();
+
+    alert("✅ 300 روپے کامیابی سے جمع ہوگئے!");
 
 }
 
-updateCoins();
+// Withdraw System
+function withdraw() {
 
-// ==========================
-// Deposit Button
-// ==========================
+    if (balance >= 300) {
 
-const depositBtn = document.querySelector(".deposit");
+        balance -= 300;
 
-depositBtn.addEventListener("click",()=>{
+        updateBalance();
 
-alert("Deposit System Coming Soon");
+        alert("✅ 300 روپے کامیابی سے نکال لیے!");
 
-});
+    } else {
 
-// ==========================
-// Withdraw Button
-// ==========================
+        alert("❌ آپ کے پاس کافی Balance نہیں ہے!");
 
-const withdrawBtn = document.querySelector(".withdraw");
-
-withdrawBtn.addEventListener("click",()=>{
-
-alert("Withdraw System Coming Soon");
-
-});
-
-// ==========================
-// Coin Shop
-// ==========================
-
-const shopBtn = document.querySelector(".shop");
-
-shopBtn.addEventListener("click",()=>{
-
-alert("Coin Shop Opening...");
-
-});
-
-// ==========================
-// Gift Button
-// ==========================
-
-const giftBtn = document.querySelector(".gift");
-
-giftBtn.addEventListener("click",()=>{
-
-alert("Gift Store Coming Soon");
-// ==========================
-// Daily Reward
-// ==========================
-
-const rewardCard = document.querySelector(".card:nth-child(2)");
-
-rewardCard.addEventListener("click", () => {
-
-coins += 500;
-
-updateCoins();
-
-alert("🎁 Daily Reward Claimed!\n+500 Coins");
-
-saveData();
-
-});
-
-// ==========================
-// Save Player Data
-// ==========================
-
-function saveData(){
-
-localStorage.setItem("starroom_coins", coins);
-
-localStorage.setItem("starroom_balance", balance);
+    }
 
 }
 
-// ==========================
-// Load Player Data
-// ==========================
+// Wallet
+function wallet() {
+  // ===== StarRoom Dashboard Part 3 =====
 
-function loadData(){
-
-const savedCoins = localStorage.getItem("starroom_coins");
-
-const savedBalance = localStorage.getItem("
-});// ==========================
-// Bottom Navigation
-// ==========================
-
-document.querySelectorAll(".bottom-nav a").forEach(item=>{
-
-item.addEventListener("click",(e)=>{
-
-console.log("Opening:",item.innerText);
-
-});
-
-});
-
-// ==========================
-// Profile
-// ==========================
-
-function openProfile(){
-
-alert("👤 Profile Page Coming Soon");
-
-}
-
-// ==========================
 // Team
-// ==========================
-
-function openTeam(){
-
-alert("👥 Team Page Coming Soon");
-
+function myTeam() {
+    alert("👥 My Team Coming Soon");
 }
 
-// ==========================
-// Leaderboard
-// ==========================
+// Gifts
+function gifts() {
+    alert("🎁 Gift System Coming Soon");
+}
 
-function openLeaderboard(){
+// Settings
+function settings() {
+    alert("⚙️ Settings Coming Soon");
+}
 
-alert("🏆
+// Logout
+function logout() {
+
+    let ok = confirm("کیا آپ Logout کرنا چاہتے ہیں؟");
+
+    if (ok) {
+        window.location.href = "index.html";
+    }
+
+}
