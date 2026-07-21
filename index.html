@@ -16,11 +16,10 @@
 
 <body>
 
-
 <div class="login-box">
 
 
-<img src="assets/logo.png" class="logo">
+<img src="assets/logo.png" class="logo" alt="StarRoom Logo">
 
 
 <h1>StarRoom</h1>
@@ -38,20 +37,27 @@ placeholder="Enter Email">
 type="password" 
 id="password" 
 placeholder="Enter Password">
-<button onclick="login()">
-Login
+
+
+<button class="login-btn" onclick="login()">
+LOGIN
 </button>
 
 
-<h3>OR</h3>
+
+<div class="or">
+
+<span></span>
+OR
+<span></span>
+
+</div>
 
 
-<div class="social-login">
 
+<button onclick="googleSignIn()" class="social-btn">
 
-<button onclick="googleSignIn()" class="google-btn">
-
-<img src="assets/google.png">
+<img src="assets/google.png" alt="Google">
 
 Continue with Google
 
@@ -59,16 +65,16 @@ Continue with Google
 
 
 
-<button onclick="facebookSignIn()" class="facebook-btn">
+<button onclick="facebookSignIn()" class="social-btn">
 
-<img src="assets/facebook.png">
+<img src="assets/facebook.png" alt="Facebook">
 
 Continue with Facebook
 
 </button>
 
 
-</div>
+
 <div class="links">
 
 <a href="#">
@@ -82,6 +88,7 @@ Create New Account
 </a>
 
 </div>
+
 
 
 </div>
