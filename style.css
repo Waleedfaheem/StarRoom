@@ -71,3 +71,133 @@ input{
     font-size:16px;
 
 }
+.login-btn{
+
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    border:none;
+    border-radius:12px;
+    background:#ffd700;
+    color:#000;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+
+}
+
+
+
+.or{
+
+    color:#aaa;
+    margin:20px 0;
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+}
+
+
+.or span{
+
+    height:1px;
+    background:#444;
+    flex:1;
+
+}
+
+
+
+.social-btn{
+
+    width:100%;
+    padding:13px;
+    margin:10px 0;
+    border-radius:12px;
+    border:1px solid #333;
+    background:#222;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    font-size:15px;
+    cursor:pointer;
+
+}
+
+
+
+.social-btn img{
+
+    width:25px;
+    height:25px;
+
+}
+
+
+
+.links{
+
+    margin-top:20px;
+
+}
+
+
+.links a{
+
+    color:#ffd700;
+    text-decoration:none;
+    font-size:14px;
+
+}
+button:hover{
+
+    opacity:0.9;
+
+}
+
+
+.login-btn:active,
+.social-btn:active{
+
+    transform:scale(0.98);
+
+}
+
+
+
+@media(max-width:480px){
+
+    .login-box{
+
+        width:95%;
+        padding:25px;
+
+    }
+
+
+    .logo{
+
+        width:90px;
+        height:90px;
+
+    }
+
+
+    h1{
+
+        font-size:28px;
+
+    }
+
+
+    input,
+    button{
+
+        font-size:15px;
+
+    }
+
+}
